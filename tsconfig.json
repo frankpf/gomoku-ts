@@ -14,10 +14,10 @@
 		"noUnusedParameters": true,
 		"strict": true,
 
-		// NodeJS module configuration
+		// React module configuration
+		"jsx": "react",
 		"module": "CommonJS",
-		"moduleResolution": "node",
-		"target": "ESNext",
+		"target": "ES5",
 
 		// Allow .json imports
 		"esModuleInterop": true,
