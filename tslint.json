@@ -1,0 +1,114 @@
+{
+	"extends": ["tslint-eslint-rules"],
+	"linterOptions": {
+		"exclude": [
+			"**/node_modules/**/*"
+		]
+	},
+	"rules": {
+		"adjacent-overload-signatures": true,
+
+		// Requires every class member to declare if it is public or private
+		"member-access": true,
+
+		"no-empty-interface": true,
+		"no-inferrable-types": true,
+
+		"no-magic-numbers": [true, -1, 0, 1],
+
+		// These aren't needed when using ES6 modules (imports and exports)
+		"no-internal-module": true,
+		"no-namespace": true,
+		"no-reference": true,
+
+		"no-parameter-reassignment": true,
+		"no-unnecessary-type-assertion": true,
+		"no-var-requires": true,
+		"prefer-for-of": true,
+		"unified-signatures": true,
+
+		"ban-comma-operator": true,
+		"curly": [true, "ignore-same-line"],
+		"no-duplicate-super": true,
+		"no-duplicate-variable": true,
+		"no-eval": true,
+		"no-invalid-template-strings": true,
+		"no-invalid-this": true,
+		"no-string-literal": true,
+		"prefer-conditional-expression": true,
+		"prefer-object-spread": true,
+		// TODO: enable these later
+		// ban: parseInt, Number
+		// ban-types: Object, Function, Boolean, Number, String, Symbol
+		//"radix": true,
+		//"strict-boolean-expressions": true,
+		//"strict-type-predicates": true,
+		//"restrict-plus-operands": true,
+		"use-isnan": true,
+
+		// Common promise/async bugs
+		"await-promise": [true],
+		"no-floating-promises": true,
+		"no-for-in-array": true,
+
+		// Allow only imports from deps listed in package.json dependencies
+		"no-implicit-dependencies": [true],
+		"no-var-keyword": true,
+		"quotemark": [true, "single", "avoid-escape"],
+		"semicolon": [true, "never"],
+		"class-name": true,
+		"linebreak-style": [true, "LF"],
+		"max-line-length": [false, 150],
+		"import-spacing": true,
+		"prefer-const": true,
+		"trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+		"arrow-parens": [true, "ban-single-arg-parens"],
+		"indent": [true, "tabs", 4],
+		"encoding": true,
+		"eofline": true,
+		"no-irregular-whitespace": true,
+		"no-unexpected-multiline": true,
+		"no-trailing-whitespace": true,
+		"no-duplicate-imports": true,
+		"no-switch-case-fall-through": true,
+		"comment-format": [
+			true,
+			"check-space"
+		],
+		"one-line": [
+			true,
+			"check-open-brace",
+			"check-else",
+			"check-finally",
+			"check-catch",
+			"check-whitespace"
+		],
+		"whitespace": [
+			true,
+			"check-branch",
+			"check-decl",
+			"check-separator",
+			"check-rest-spread",
+			"check-type-operator",
+			"check-preblock",
+			"check-type"
+		],
+		"typedef-whitespace": [
+			true,
+			{
+				"call-signature": "nospace",
+				"index-signature": "nospace",
+				"parameter": "nospace",
+				"property-declaration": "nospace",
+				"variable-declaration": "nospace"
+			},
+			{
+				"call-signature": "onespace",
+				"index-signature": "onespace",
+				"parameter": "onespace",
+				"property-declaration": "onespace",
+				"variable-declaration": "onespace"
+			}
+		]
+	}
+}

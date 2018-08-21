@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"sourceMap": true,
+		"outDir": "./dist/",
+		"baseUrl": ".",
+		"diagnostics": false,
+
+		// Code quality
+		"forceConsistentCasingInFileNames": true,
+		"noErrorTruncation": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strict": true,
+
+		// NodeJS module configuration
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"target": "ESNext",
+
+		// Allow .json imports
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	},
+	"include": [
+		"src/**/*",
+		"tests/**/*"
+	]
+}
