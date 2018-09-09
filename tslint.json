@@ -14,8 +14,6 @@
 		"no-empty-interface": true,
 		"no-inferrable-types": true,
 
-		"no-magic-numbers": [true, -1, 0, 1],
-
 		// These aren't needed when using ES6 modules (imports and exports)
 		"no-internal-module": true,
 		"no-namespace": true,

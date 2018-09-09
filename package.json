@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"test": "mocha --exit --timeout 10000 dist/tests",
+		"test": "ava dist/tests",
 		"start": "yarn run build && yarn run watch",
 		"debug": "yarn run build && yarn run watch-debug",
 		"build": "yarn run build-ts",
@@ -34,6 +34,10 @@
 		"typescript": "^3.0.1"
 	},
 	"dependencies": {
+		"ava": "^0.25.0",
+		"ava-fast-check": "^1.0.1",
+		"fast-check": "^1.5.0",
+		"fp-ts": "^1.8.0",
 		"react": "^16.4.2",
 		"react-dom": "^16.4.2"
 	}

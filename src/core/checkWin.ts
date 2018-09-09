@@ -1,6 +1,7 @@
-import {Coordinate} from './coordinate'
-import {BoardStorage} from './storage'
-import * as Direction from './direction'
+import {Point} from './point'
+import {Piece} from './piece'
+import {Board} from './storage'
+import {Direction} from './direction'
 
 const Negative = -1
 const Positive = 1
@@ -13,22 +14,22 @@ interface MoveOperation {
 	y: MoveIncrement
 }
 
-const getMoveOperation = (dir: Direction.Direction): MoveOperation => {
+export const getMoveOperation = (dir: Direction): MoveOperation => {
 	switch (dir) {
 		/* Positive Y */
 		case Direction.North:
-			return { x: Neutral, y: Positive }
+			return { x: Neutral, y: Negative }
 		case Direction.Northeast:
-			return { x: Positive, y: Positive }
+			return { x: Positive, y: Negative }
 		case Direction.Northwest:
-			return { x: Negative, y: Positive }
+			return { x: Negative, y: Negative }
 		/* Negative Y */
 		case Direction.South:
-			return { x: Neutral, y: Negative }
+			return { x: Neutral, y: Positive }
 		case Direction.Southeast:
-			return { x: Positive, y: Negative }
+			return { x: Positive, y: Positive }
 		case Direction.Southwest:
-			return { x: Negative, y: Negative }
+			return { x: Negative, y: Positive }
 		/* Neutral Y */
 		case Direction.East:
 			return { x: Positive, y: Neutral }
@@ -37,18 +38,18 @@ const getMoveOperation = (dir: Direction.Direction): MoveOperation => {
 	}
 }
 
-const countUpTo = (bs: BoardStorage) => (dir: Direction.Direction, center: Coordinate, bit: boolean, upTo: number) => {
+export const countUpTo = (b: Board) => (dir: Direction, center: Point, piece: Piece, upTo: number) => {
 	const op = getMoveOperation(dir)
 
 	let count = 0
 	for (let i = 0; i < upTo; i++) {
-		const currentCoord: Coordinate = {
+		const currentCoord: Point = {
 			x: center.x + (op.x * i),
 			y: center.y + (op.y * i),
 		}
-		const value = bs.getCoords(currentCoord)
+		const square = b.getSquare(currentCoord)
 
-		if (value != bit) {
+		if (square.isNone() || square.isSome() && square.value !== piece) {
 			break
 		}
 
@@ -58,23 +59,6 @@ const countUpTo = (bs: BoardStorage) => (dir: Direction.Direction, center: Coord
 	return count
 }
 
-export const checkWin = (bs: BoardStorage) => (x: number, y: number) => {
+export const checkWin = (b: Board) => (x: number, y: number) => {
 	return true
-}
-
-
-const getBoardStorage = (): BoardStorage => {
-
-	function getCoords(coord: Coordinate): boolean {
-
-	}
-
-	function setCoords(coord: Coordinate, bit: boolean) {
-
-	}
-
-	return {
-		getCoords,
-		setCoords
-	}
 }

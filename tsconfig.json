@@ -19,6 +19,8 @@
 		"module": "CommonJS",
 		"target": "ES5",
 
+		"lib": ["es6"],
+
 		// Allow .json imports
 		"esModuleInterop": true,
 		"resolveJsonModule": true
